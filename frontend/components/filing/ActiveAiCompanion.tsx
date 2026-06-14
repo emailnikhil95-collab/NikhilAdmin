@@ -95,6 +95,36 @@ export const FIELD_GUIDANCE: Record<string, { title: string; tip: string; impact
     tip: "Enter the interest portion paid on your housing loan this year (Max ₹2,00,000 for self-occupied).",
     impact: "Significantly reduces taxable income under the Old Regime.",
   },
+  actual_rent_paid_80gg: {
+    title: "Rent Paid (No HRA received)",
+    tip: "Rent paid if you do not receive HRA from your employer. Claimable under Section 80GG.",
+    impact: "Deduction capped at ₹5,000/month or 25% of adjusted total income under Old Regime.",
+  },
+  nps_extra: {
+    title: "NPS Extra (Section 80CCD(1B))",
+    tip: "Additional self-contribution to National Pension System (NPS) Tier 1 up to ₹50,000.",
+    impact: "Saves extra tax completely over-and-above the ₹1.5 Lakh limit of Section 80C.",
+  },
+  annualRent: {
+    title: "Annual Rental Income",
+    tip: "Gross rent received from letting out your owned house property to a tenant.",
+    impact: "Subject to a standard 30% deduction (Sec 24a) for repairs before being taxed.",
+  },
+  municipalTax: {
+    title: "Municipal Property Tax Paid",
+    tip: "Local body property tax actually paid by you during the financial year.",
+    impact: "Directly subtracted from rental income to reduce your property tax liability.",
+  },
+  coOwnerPercent: {
+    title: "Co-Ownership Share (%)",
+    tip: "Your legal share of ownership in this property (e.g. 100% for sole owner, 50% for half-half).",
+    impact: "Scales all rental income, taxes, and loan interest calculations by this share.",
+  },
+  propertyType: {
+    title: "Property Occupancy Type",
+    tip: "Choose Self-occupied if you live in it, or Let-out if you rent it out to tenants.",
+    impact: "Determines interest claim limits (capped at ₹2L for self-occupied; unlimited for let-out).",
+  },
 };
 
 const STEP_GUIDANCE: Record<string, { banner: string; tips: string[] }> = {

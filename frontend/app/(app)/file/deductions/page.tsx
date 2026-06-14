@@ -149,7 +149,7 @@ export default function DeductionsPage() {
                 simpleLabel="80GG Total"
                 placeholder="0"
                 type="number"
-                fieldId="actual_rent_paid"
+                fieldId="actual_rent_paid_80gg"
                 value={deductions.section80GG ? String(deductions.section80GG) : ""}
                 onChange={handleUpdate80GG}
               />

@@ -25,9 +25,13 @@ export async function loadChatMessages(): Promise<ChatMessage[]> {
 }
 
 export async function saveChatMessages(messages: ChatMessage[]): Promise<void> {
-  const filePath = chatFilePath();
-  await fs.mkdir(path.dirname(filePath), { recursive: true });
-  await fs.writeFile(filePath, JSON.stringify(messages, null, 2), "utf-8");
+  try {
+    const filePath = chatFilePath();
+    await fs.mkdir(path.dirname(filePath), { recursive: true });
+    await fs.writeFile(filePath, JSON.stringify(messages, null, 2), "utf-8");
+  } catch (err) {
+    console.warn("Failed to write chat history to disk (falling back to memory):", err);
+  }
   memoryStore.length = 0;
   memoryStore.push(...messages);
 }

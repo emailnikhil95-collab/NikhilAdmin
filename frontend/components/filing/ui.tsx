@@ -258,15 +258,21 @@ export function SelectInput({
   value,
   onChange,
   options,
+  onFocus,
+  onBlur,
 }: {
   value: string;
   onChange: (v: string) => void;
   options: { value: string; label: string }[];
+  onFocus?: () => void;
+  onBlur?: () => void;
 }) {
   return (
     <select
       value={value}
       onChange={(e) => onChange(e.target.value)}
+      onFocus={onFocus}
+      onBlur={onBlur}
       className="w-full rounded-xl border border-slate-200/80 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/15"
     >
       {options.map((o) => (

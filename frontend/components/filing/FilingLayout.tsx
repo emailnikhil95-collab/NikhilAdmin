@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import { getIncomeSectionStatuses, statusDotClass } from "@/lib/filing/navStatus";
 import { ProfileNavLink } from "@/components/marketing/ProfileNavLink";
 import { ActiveAiCompanion } from "./ActiveAiCompanion";
+import { FloatingGenie } from "./FloatingGenie";
 import {
   UserCheck,
   UploadCloud,
@@ -569,6 +570,7 @@ export function FilingLayout({
           </div>
         </div>
       )}
+      <FloatingGenie />
     </div>
   );
 }
