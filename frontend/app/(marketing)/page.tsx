@@ -22,9 +22,10 @@ import {
   HERO_HEADLINE,
   HERO_HEADLINE_ACCENT,
 } from "@/lib/copy/marketing";
-import { TYPOGRAPHY_SCALE } from "@/lib/design/layout";
+import { HERO_LAYOUT, TYPOGRAPHY_SCALE } from "@/lib/design/layout";
 import { SITE_TAGLINE } from "@/lib/constants";
 import { pageMetadata } from "@/lib/seo";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = pageMetadata({
   title: "File ITR before the deadline",
@@ -40,9 +41,9 @@ export default function HomePage() {
       <main>
         <ScrollReveal delay={0}>
           <section className="hero-mesh relative overflow-hidden border-b border-border/40 px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto w-full max-w-6xl min-w-0 py-6 lg:py-8">
-              <div className="grid items-center gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(260px,0.68fr)] xl:grid-cols-[minmax(0,1.28fr)_minmax(280px,0.6fr)] lg:gap-6 xl:gap-8">
-                <div className="min-w-0 text-center lg:text-left lg:pr-2 xl:pr-4">
+            <div className={cn("mx-auto w-full min-w-0", HERO_LAYOUT.container, HERO_LAYOUT.shell)}>
+              <div className={HERO_LAYOUT.grid}>
+                <div className={cn("min-w-0 text-center lg:text-left lg:pr-4 xl:pr-8", HERO_LAYOUT.content)}>
                   <h1
                     className={`landing-reveal landing-reveal-delay-1 font-heading font-semibold text-foreground ${TYPOGRAPHY_SCALE.display}`}
                   >
@@ -53,20 +54,22 @@ export default function HomePage() {
                     </span>
                   </h1>
                   <p
-                    className={`landing-reveal landing-reveal-delay-2 mx-auto mt-2 max-w-xl text-muted-foreground lg:mx-0 ${TYPOGRAPHY_SCALE.caption} sm:mt-2.5`}
+                    className={`landing-reveal landing-reveal-delay-2 mx-auto max-w-xl text-muted-foreground lg:mx-0 ${TYPOGRAPHY_SCALE.body} sm:max-w-2xl`}
                   >
                     {HERO_EMOTIONAL_HOOK}
                   </p>
-                  <div className="landing-reveal landing-reveal-delay-3 mx-auto mt-4 max-w-xl lg:mx-0">
+                  <div className="landing-reveal landing-reveal-delay-3 mx-auto max-w-xl lg:mx-0 lg:max-w-2xl">
                     <CompanionModeCallout variant="cta-only" />
                   </div>
                 </div>
 
-                <HeroParallax className="landing-reveal landing-reveal-delay-2 relative min-w-0 lg:justify-self-end lg:pl-2 xl:pl-6">
-                  <RegimeCompareCard
-                    className="relative ml-auto w-full max-w-[18.5rem] sm:max-w-[19rem] xl:max-w-[20rem]"
-                    compact
-                  />
+                <HeroParallax
+                  className={cn(
+                    "landing-reveal landing-reveal-delay-2 relative min-w-0",
+                    HERO_LAYOUT.calculatorRail
+                  )}
+                >
+                  <RegimeCompareCard className="relative w-full shadow-lg shadow-primary/5" />
                 </HeroParallax>
               </div>
             </div>

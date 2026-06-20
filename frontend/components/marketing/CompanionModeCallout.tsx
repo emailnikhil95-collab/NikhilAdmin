@@ -34,7 +34,7 @@ export function CompanionModeCallout({
 
   if (variant === "cta-only") {
     return (
-      <div className={cn("space-y-2.5", className)}>
+      <div className={cn("space-y-4 sm:space-y-5", className)}>
         <HeroNameForm
           compact
           showForm16Cta={false}
@@ -43,7 +43,7 @@ export function CompanionModeCallout({
         />
         <TrustBar variant="hero-inline" showBetaBadge={false} />
         <HeroSecondaryActions />
-        <p className="text-center text-[10px] leading-snug text-muted-foreground lg:text-left">
+        <p className="pt-0.5 text-center text-[11px] leading-relaxed text-muted-foreground lg:text-left">
           {COMPANION_ITD_DISCLAIMER} · ✨ {HERO_TRUST_DISCLAIMER}
         </p>
       </div>

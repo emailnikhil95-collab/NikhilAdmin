@@ -24,6 +24,15 @@ export const COMPACT_GRID = {
 
 export const COMPACT_PAGE_SHELL = "py-6 sm:py-8";
 
+/** Landing hero — airy left column + calculator anchored on the right */
+export const HERO_LAYOUT = {
+  shell: "py-8 sm:py-10 lg:py-12 xl:py-14",
+  container: "max-w-7xl",
+  grid: "grid items-start gap-8 sm:gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-12 xl:gap-16 2xl:gap-20",
+  content: "space-y-5 sm:space-y-6 lg:space-y-7",
+  calculatorRail: "w-full lg:w-[min(100%,26rem)] xl:w-[min(100%,28rem)] lg:shrink-0 lg:justify-self-end",
+} as const;
+
 export const TYPOGRAPHY_SCALE = {
   display: "text-[length:var(--text-display)] leading-[1.1] tracking-[-0.02em]",
   headline: "text-[length:var(--text-headline)] leading-[1.2] tracking-[-0.015em]",
